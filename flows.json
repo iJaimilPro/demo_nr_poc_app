@@ -1,1 +1,103 @@
-[]
+[
+    {
+        "id": "522d825b9a07d058",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6b951795ad5a7e28",
+        "type": "inject",
+        "z": "522d825b9a07d058",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "signup data",
+        "payload": "{\"firstName\":\"Jaimil\",\"lastName\":\"Shah\",\"email\":\"jaimil.user1@test.com\",\"password\":\"Password2024!@#\"}",
+        "payloadType": "json",
+        "x": 210,
+        "y": 260,
+        "wires": [
+            [
+                "6cd63736d5908a7a"
+            ]
+        ]
+    },
+    {
+        "id": "6cd63736d5908a7a",
+        "type": "uibuilder",
+        "z": "522d825b9a07d058",
+        "name": "Form",
+        "topic": "",
+        "url": "form",
+        "okToGo": true,
+        "fwdInMessages": false,
+        "allowScripts": false,
+        "allowStyles": false,
+        "copyIndex": true,
+        "templateFolder": "iife-vue3-nobuild",
+        "extTemplate": "",
+        "showfolder": false,
+        "reload": false,
+        "sourceFolder": "src",
+        "deployedVersion": "6.8.2",
+        "showMsgUib": false,
+        "title": "",
+        "descr": "",
+        "x": 470,
+        "y": 260,
+        "wires": [
+            [
+                "a2bfc410fd4021b4"
+            ],
+            [
+                "c895d977e44abcac"
+            ]
+        ]
+    },
+    {
+        "id": "c895d977e44abcac",
+        "type": "debug",
+        "z": "522d825b9a07d058",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "a2bfc410fd4021b4",
+        "type": "debug",
+        "z": "522d825b9a07d058",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 200,
+        "wires": []
+    }
+]
