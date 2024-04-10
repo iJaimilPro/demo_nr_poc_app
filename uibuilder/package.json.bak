@@ -3,13 +3,24 @@
   "version": "6.8.2",
   "description": "Root configuration and data folder for uibuilder",
   "scripts": {},
-  "dependencies": {},
+  "dependencies": {
+    "vue": "^3.4.21"
+  },
   "homepage": "",
   "bugs": "",
   "author": "",
   "license": "Apache-2.0",
   "repository": "",
   "uibuilder": {
-    "packages": {}
+    "packages": {
+      "vue": {
+        "spec": "^3.4.21",
+        "missing": true,
+        "problems": [
+          "missing: vue@^3.4.21, required by uib_root@6.8.2"
+        ],
+        "installedFrom": "npm"
+      }
+    }
   }
 }

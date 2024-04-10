@@ -1,8 +1,10 @@
 {
-    "name": "node_red_poc_uibuilder",
+    "name": "ASHER-APP",
     "description": "A Node-RED Project",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-contrib-uibuilder": "6.8.2"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows.json",

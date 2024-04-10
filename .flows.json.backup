@@ -506,7 +506,9 @@
             [
                 "d308c7b35d7db739"
             ],
-            []
+            [
+                "d16f695dd5a0b483"
+            ]
         ]
     },
     {
@@ -614,6 +616,24 @@
                 "baaec2daa71931dc"
             ]
         ]
+    },
+    {
+        "id": "d16f695dd5a0b483",
+        "type": "debug",
+        "z": "75f12c4481dd5390",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "counter",
+        "x": 975,
+        "y": 420,
+        "wires": [],
+        "l": false
     },
     {
         "id": "454da28ef00e68b6",
