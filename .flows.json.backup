@@ -468,14 +468,15 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "",
+        "topic": "main inject",
         "payload": "{\"count\":\"9\",\"key2\":\"value2\"}",
         "payloadType": "json",
         "x": 390,
         "y": 240,
         "wires": [
             [
-                "baaec2daa71931dc"
+                "baaec2daa71931dc",
+                "33ef2e9d114db0c4"
             ]
         ]
     },
@@ -506,9 +507,7 @@
             [
                 "d308c7b35d7db739"
             ],
-            [
-                "d16f695dd5a0b483"
-            ]
+            []
         ]
     },
     {
@@ -576,7 +575,7 @@
         "id": "8f26e97566163984",
         "type": "inject",
         "z": "75f12c4481dd5390",
-        "name": "",
+        "name": "inject 2",
         "props": [
             {
                 "p": "payload"
@@ -618,22 +617,51 @@
         ]
     },
     {
-        "id": "d16f695dd5a0b483",
+        "id": "33ef2e9d114db0c4",
+        "type": "uibuilder",
+        "z": "75f12c4481dd5390",
+        "name": "",
+        "topic": "",
+        "url": "sample",
+        "okToGo": true,
+        "fwdInMessages": false,
+        "allowScripts": false,
+        "allowStyles": false,
+        "copyIndex": true,
+        "templateFolder": "iife-vue3-nobuild",
+        "extTemplate": "",
+        "showfolder": false,
+        "reload": false,
+        "sourceFolder": "src",
+        "deployedVersion": "6.8.2",
+        "showMsgUib": false,
+        "title": "",
+        "descr": "",
+        "x": 660,
+        "y": 220,
+        "wires": [
+            [
+                "d4b5b04527ee6ead"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d4b5b04527ee6ead",
         "type": "debug",
         "z": "75f12c4481dd5390",
-        "name": "debug 2",
-        "active": false,
+        "name": "sample debug",
+        "active": true,
         "tosidebar": true,
         "console": false,
-        "tostatus": true,
+        "tostatus": false,
         "complete": "payload",
         "targetType": "msg",
         "statusVal": "",
-        "statusType": "counter",
-        "x": 975,
-        "y": 420,
-        "wires": [],
-        "l": false
+        "statusType": "auto",
+        "x": 940,
+        "y": 180,
+        "wires": []
     },
     {
         "id": "454da28ef00e68b6",
@@ -682,14 +710,13 @@
         "templateFolder": "blank",
         "extTemplate": "",
         "showfolder": false,
-        "oldUrl": "uib-element-tests",
         "reload": true,
         "sourceFolder": "src",
         "deployedVersion": "6.8.2",
         "showMsgUib": true,
         "title": "Zero-code examples",
         "descr": "A collection of flows that demonstrate and test all of the uib-element node's output types.",
-        "x": 510,
+        "x": 520,
         "y": 160,
         "wires": [
             [
