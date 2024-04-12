@@ -534,11 +534,11 @@
         "z": "75f12c4481dd5390",
         "name": "",
         "topic": "",
-        "elementtype": "sform",
+        "elementtype": "html",
         "parent": "#more",
         "parentSource": "",
         "parentSourceType": "str",
-        "elementid": "",
+        "elementid": "submit_form",
         "elementId": "",
         "elementIdSourceType": "str",
         "heading": "",
@@ -548,7 +548,7 @@
         "dataSourceType": "msg",
         "position": "last",
         "positionSourceType": "str",
-        "passthrough": false,
+        "passthrough": true,
         "confData": {},
         "x": 710,
         "y": 540,
@@ -556,7 +556,8 @@
             [
                 "bc8e97e6f6d12b7e"
             ]
-        ]
+        ],
+        "info": "Hello world form!!!"
     },
     {
         "id": "bc8e97e6f6d12b7e",
@@ -662,6 +663,35 @@
         "x": 940,
         "y": 180,
         "wires": []
+    },
+    {
+        "id": "88f397988ced571f",
+        "type": "inject",
+        "z": "75f12c4481dd5390",
+        "name": "inject 3",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[{\"id\":\"r1\",\"type\":\"text\",\"required\":false,\"label\":\"Text Input\",\"value\":\"Foo\"},{\"id\":\"r2\",\"type\":\"color\",\"required\":false,\"label\":\"Colour\",\"value\":\"#427798\"},{\"id\":\"r3\",\"type\":\"date\",\"required\":true,\"label\":\"Date\"},{\"id\":\"r4\",\"type\":\"range\",\"required\":false,\"label\":\"Range (0-100):\",\"value\":20,\"min\":0,\"max\":100},{\"id\":\"r5\",\"type\":\"button\",\"label\":\"Send to Node-Red\",\"value\":\"Butthons can have values as well\"}]",
+        "payloadType": "json",
+        "x": 450,
+        "y": 640,
+        "wires": [
+            [
+                "baaec2daa71931dc"
+            ]
+        ]
     },
     {
         "id": "454da28ef00e68b6",

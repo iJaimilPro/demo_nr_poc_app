@@ -454,7 +454,7 @@
         "id": "24f977a4f4d5a994",
         "type": "inject",
         "z": "75f12c4481dd5390",
-        "name": "",
+        "name": "inject 1",
         "props": [
             {
                 "p": "payload"
@@ -534,11 +534,11 @@
         "z": "75f12c4481dd5390",
         "name": "",
         "topic": "",
-        "elementtype": "sform",
+        "elementtype": "html",
         "parent": "#more",
         "parentSource": "",
         "parentSourceType": "str",
-        "elementid": "",
+        "elementid": "submit_form",
         "elementId": "",
         "elementIdSourceType": "str",
         "heading": "",
@@ -548,7 +548,7 @@
         "dataSourceType": "msg",
         "position": "last",
         "positionSourceType": "str",
-        "passthrough": false,
+        "passthrough": true,
         "confData": {},
         "x": 710,
         "y": 540,
@@ -556,7 +556,8 @@
             [
                 "bc8e97e6f6d12b7e"
             ]
-        ]
+        ],
+        "info": "Hello world form!!!"
     },
     {
         "id": "bc8e97e6f6d12b7e",
