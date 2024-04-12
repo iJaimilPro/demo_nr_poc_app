@@ -58,10 +58,7 @@ const app = createApp({
 	// Dynamic data
 	computed: {},
 
-	// Supporting functions
 	methods: {
-		// REALLY Simple method to return DOM events back to Node-RED.
-		// submitEvent: (event) => uibuilder.eventSend(event),
 		doEvent: (count) => uibuilder.send({payload:JSON.stringify({count:count})}),
 		incrementCount() {
 			this.count++;
@@ -69,13 +66,9 @@ const app = createApp({
 		handleTextInputChange(event) {
 			this.text_input = event.target.value;
 		},
-    handleColorChange(event) {
+		handleColorChange(event) {
 			this.color = event.target.value
 		},
-		// handleDateChange(newDate) {
-		// 	this.selectedDate = newDate
-		// 	console.log("selectedDate", this.selectedDate)
-		// },
 		submitEvent: (text, color, range) => {
 			uibuilder.send({
 				payload:JSON.stringify({

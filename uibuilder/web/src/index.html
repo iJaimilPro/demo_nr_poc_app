@@ -22,7 +22,7 @@
 		<!-- https://cdn.jsdelivr.net/npm/vuetify@3.5.15/dist/vuetify.min.js -->
 		<script defer src="./utils/vuetify.min.js"></script>
 		<!-- https://cdn.jsdelivr.net/npm/vuetify@3.5.15/dist/vuetify.min.css -->
-		<link type="text/css" rel="stylesheet" href="./css/vuetify.min.css" media="all">
+		<link type="text/css" rel="stylesheet" href="./utils/vuetify.min.css" media="all">
 
 		<script defer src="./components/input.js">/* OPTIONAL: Put your custom code in that */</script>
 		<script defer src="./components/color-picker.js">/* OPTIONAL: Put your custom code in that */</script>
@@ -54,7 +54,6 @@
 								v-model="color"
 								@change="handleColorChange"
 							></v-color-picker>
-							<!-- <v-date-picker v-model="selectedDate" @input="handleDateChange"></v-date-picker> -->
 							<v-slider label="Range (0-100):" v-model="selectedRange" :min="0" :max="100"></v-slider>
 							<v-btn 
 								@click="submitEvent(text_input, color, selectedRange)" 
@@ -62,16 +61,10 @@
 							>
 								Send to Node-Red
 							</v-btn>
-							<!-- <app-input></app-input>
-							<app-color-picker></app-color-picker>
-							<app-date-picker></app-date-picker>
-							<app-range-slider></app-range-slider>
-							<app-btn></app-btn> -->
 						</div>
-					
 						<div class="border">
 							<p>
-									Not sent back to Node-RED - this just shows that VueJS is working
+                Not sent back to Node-RED - this just shows that VueJS is working
 							</p>
 							<p>
 								<v-btn @click="count++" title="Not sent back to Node-RED - this just shows that VueJS is working">
@@ -93,10 +86,6 @@
 								of the form inputs back to Node-RED as well.
 							</p>
 						</div>
-						<!-- <p>
-								<label for="input1">This is sent to Node-RED when you exit it: </label>
-								<input v-model="input1" @change="doEvent" id="input1" type="text" placeholder="Type text then exit field">
-						</p> -->
 						<v-data-table :items="items"></v-data-table>
 					</div>
 				</div>
