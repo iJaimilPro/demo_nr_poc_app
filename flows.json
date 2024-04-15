@@ -534,7 +534,7 @@
         "z": "75f12c4481dd5390",
         "name": "",
         "topic": "",
-        "elementtype": "html",
+        "elementtype": "sform",
         "parent": "#more",
         "parentSource": "",
         "parentSourceType": "str",
@@ -550,7 +550,7 @@
         "positionSourceType": "str",
         "passthrough": true,
         "confData": {},
-        "x": 710,
+        "x": 720,
         "y": 540,
         "wires": [
             [
@@ -685,8 +685,8 @@
         "topic": "",
         "payload": "[{\"id\":\"r1\",\"type\":\"text\",\"required\":false,\"label\":\"Text Input\",\"value\":\"Foo\"},{\"id\":\"r2\",\"type\":\"color\",\"required\":false,\"label\":\"Colour\",\"value\":\"#427798\"},{\"id\":\"r3\",\"type\":\"date\",\"required\":true,\"label\":\"Date\"},{\"id\":\"r4\",\"type\":\"range\",\"required\":false,\"label\":\"Range (0-100):\",\"value\":20,\"min\":0,\"max\":100},{\"id\":\"r5\",\"type\":\"button\",\"label\":\"Send to Node-Red\",\"value\":\"Butthons can have values as well\"}]",
         "payloadType": "json",
-        "x": 450,
-        "y": 640,
+        "x": 290,
+        "y": 460,
         "wires": [
             [
                 "baaec2daa71931dc"

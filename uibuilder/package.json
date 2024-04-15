@@ -4,7 +4,9 @@
   "description": "Root configuration and data folder for uibuilder",
   "scripts": {},
   "dependencies": {
-    "vue": "^3.4.21"
+    "@mdi/font": "^7.4.47",
+    "vue": "^3.4.21",
+    "vuetify": "^3.5.15"
   },
   "homepage": "",
   "bugs": "",
@@ -13,14 +15,32 @@
   "repository": "",
   "uibuilder": {
     "packages": {
+      "@mdi/font": {
+        "installFolder": "\\Users\\JaiDev\\.node-red\\projects\\ASHER-APP\\uibuilder\\node_modules\\@mdi\\font",
+        "installedVersion": "7.4.47",
+        "estimatedEntryPoint": "?",
+        "homepage": "https://materialdesignicons.com",
+        "packageUrl": "/@mdi/font",
+        "url": "../uibuilder/vendor/@mdi/font/?",
+        "spec": "^7.4.47"
+      },
       "vue": {
-        "spec": "^3.4.21",
-        "missing": true,
-        "problems": [
-          "missing: vue@^3.4.21, required by uib_root@6.8.2"
-        ],
-        "installedFrom": "npm",
-        "outdated": {}
+        "installFolder": "\\Users\\JaiDev\\.node-red\\projects\\ASHER-APP\\uibuilder\\node_modules\\vue",
+        "installedVersion": "3.4.21",
+        "estimatedEntryPoint": "dist/vue.global.js",
+        "homepage": "https://github.com/vuejs/core/tree/main/packages/vue#readme",
+        "packageUrl": "/vue",
+        "url": "../uibuilder/vendor/vue/dist/vue.global.js",
+        "spec": "^3.4.21"
+      },
+      "vuetify": {
+        "installFolder": "\\Users\\JaiDev\\.node-red\\projects\\ASHER-APP\\uibuilder\\node_modules\\vuetify",
+        "installedVersion": "3.5.15",
+        "estimatedEntryPoint": "dist/vuetify.js",
+        "homepage": "https://vuetifyjs.com",
+        "packageUrl": "/vuetify",
+        "url": "../uibuilder/vendor/vuetify/dist/vuetify.js",
+        "spec": "^3.5.15"
       }
     }
   }

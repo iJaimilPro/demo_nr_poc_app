@@ -11,26 +11,19 @@
 		<!-- Your own CSS -->
 		<link type="text/css" rel="stylesheet" href="./index.css" media="all">
 
-		<!-- #region Supporting Scripts. These MUST be in the right order. Note no leading / - socket.io no longer needed  -->
-		<!-- <script defer src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.global.prod.js">/* Remove .prod for development version */</script> -->
-		<!-- <script defer src="../../uibuilder/vendor/vue/dist/vue.global.prod.js">/* Remove .prod for development version */</script> -->
-		<script defer src="./utils/vue.global.prod.js">/* Remove .prod for development version */</script>
-
+		<script defer src="../../uibuilder/vendor/vue/dist/vue.global.prod.js"></script>
 		<script defer src="../../uibuilder/uibuilder.iife.min.js"></script>
+		<script defer src="../../uibuilder/vendor/vuetify/dist/vuetify.min.js"></script>
 		
+		<link type="text/css" rel="stylesheet" href="../../uibuilder/vendor/vuetify/dist/vuetify.min.css" media="all">
+		<link type="text/css" rel="stylesheet" href="../../uibuilder/vendor/@mdi/font/css/materialdesignicons.css" media="all">
 		
-		<!-- https://cdn.jsdelivr.net/npm/vuetify@3.5.15/dist/vuetify.min.js -->
-		<script defer src="./utils/vuetify.min.js"></script>
-		<!-- https://cdn.jsdelivr.net/npm/vuetify@3.5.15/dist/vuetify.min.css -->
-		<link type="text/css" rel="stylesheet" href="./utils/vuetify.min.css" media="all">
-
 		<script defer src="./components/input.js">/* OPTIONAL: Put your custom code in that */</script>
 		<script defer src="./components/color-picker.js">/* OPTIONAL: Put your custom code in that */</script>
 		<script defer src="./components/date-picker.js">/* OPTIONAL: Put your custom code in that */</script>
 		<script defer src="./components/range-slider.js">/* OPTIONAL: Put your custom code in that */</script>
 		<script defer src="./components/button.js">/* OPTIONAL: Put your custom code in that */</script>
 		<script defer src="./index.js">/* OPTIONAL: Put your custom code in that */</script>
-		<!-- #endregion -->
 	</head>
 	<body class="uib">
 		<div id="app">
@@ -54,6 +47,28 @@
 								v-model="color"
 								@change="handleColorChange"
 							></v-color-picker>
+							<div style="margin-top: 1rem; position: relative;">
+								<v-menu
+									v-model="menu"
+									:close-on-content-click="false"
+									:nudge-right="40"
+									transition="scale-transition"
+									offset-y
+									attach
+								>
+									<template v-slot:activator="{ on }">
+										<v-text-field
+											v-model="date"
+											label="Pick a date"
+											readonly
+											v-on="on"
+											@click="toggleMenu"
+											ref="activator"
+										></v-text-field>
+									</template>
+									<v-date-picker v-model="date" @input="menu = false"></v-date-picker>
+								</v-menu>
+							</div>
 							<v-slider label="Range (0-100):" v-model="selectedRange" :min="0" :max="100"></v-slider>
 							<v-btn 
 								@click="submitEvent(text_input, color, selectedRange)" 
@@ -62,9 +77,10 @@
 								Send to Node-Red
 							</v-btn>
 						</div>
+					
 						<div class="border">
 							<p>
-                Not sent back to Node-RED - this just shows that VueJS is working
+								Not sent back to Node-RED - this just shows that VueJS is working
 							</p>
 							<p>
 								<v-btn @click="count++" title="Not sent back to Node-RED - this just shows that VueJS is working">
