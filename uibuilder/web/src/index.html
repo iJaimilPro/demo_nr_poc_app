@@ -1,111 +1,93 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>ASHER</title>
-		<meta name="description" content="ASHER">
-		<link rel="icon" href="../uibuilder/images/node-blue.ico">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<!-- Your own CSS -->
-		<link type="text/css" rel="stylesheet" href="./index.css" media="all">
+  <title>ASHER</title>
+  <meta name="description" content="ASHER">
+  <link rel="icon" href="../uibuilder/images/node-blue.ico">
 
-		<script defer src="../../uibuilder/vendor/vue/dist/vue.global.prod.js"></script>
-		<script defer src="../../uibuilder/uibuilder.iife.min.js"></script>
-		<script defer src="../../uibuilder/vendor/vuetify/dist/vuetify.min.js"></script>
-		
-		<link type="text/css" rel="stylesheet" href="../../uibuilder/vendor/vuetify/dist/vuetify.min.css" media="all">
-		<link type="text/css" rel="stylesheet" href="../../uibuilder/vendor/@mdi/font/css/materialdesignicons.css" media="all">
-		
-		<script defer src="./components/input.js">/* OPTIONAL: Put your custom code in that */</script>
-		<script defer src="./components/color-picker.js">/* OPTIONAL: Put your custom code in that */</script>
-		<script defer src="./components/date-picker.js">/* OPTIONAL: Put your custom code in that */</script>
-		<script defer src="./components/range-slider.js">/* OPTIONAL: Put your custom code in that */</script>
-		<script defer src="./components/button.js">/* OPTIONAL: Put your custom code in that */</script>
-		<script defer src="./index.js">/* OPTIONAL: Put your custom code in that */</script>
-	</head>
-	<body class="uib">
-		<div id="app">
-			<div class="page-title">ASHER Dashboard</div>
-			<div class="page-content">
-				<div class="menu-section">
-					<div class="menu">Home</div>
-					<div class="menu">Unit Overview</div>
-				</div>
-				<div class="content-section">
-					<div class="main-content">
-						<div id="more"><!-- '#more' is used as a parent for dynamic content in examples --></div>
-						<div class="border" v-show="displayBtnByInjection">
-							<v-text-field
-								v-model="text_input"
-								label="Text Input"
-								@change="handleTextInputChange"
-							></v-text-field>
-							<v-color-picker
-								hide-canvas
-								v-model="color"
-								@change="handleColorChange"
-							></v-color-picker>
-							<div style="margin-top: 1rem; position: relative;">
-								<v-menu
-									v-model="menu"
-									:close-on-content-click="false"
-									:nudge-right="40"
-									transition="scale-transition"
-									offset-y
-									attach
-								>
-									<template v-slot:activator="{ on }">
-										<v-text-field
-											v-model="date"
-											label="Pick a date"
-											readonly
-											v-on="on"
-											@click="toggleMenu"
-											ref="activator"
-										></v-text-field>
-									</template>
-									<v-date-picker v-model="date" @input="menu = false"></v-date-picker>
-								</v-menu>
-							</div>
-							<v-slider label="Range (0-100):" v-model="selectedRange" :min="0" :max="100"></v-slider>
-							<v-btn 
-								@click="submitEvent(text_input, color, selectedRange)" 
-								title="Not sent back to Node-RED - this just shows that VueJS is working"
-							>
-								Send to Node-Red
-							</v-btn>
-						</div>
-					
-						<div class="border">
-							<p>
-								Not sent back to Node-RED - this just shows that VueJS is working
-							</p>
-							<p>
-								<v-btn @click="count++" title="Not sent back to Node-RED - this just shows that VueJS is working">
-									Counter: {{ count }}
-								</v-btn>
-							</p>
-						</div>
-						<div class="border">
-							<p>
-								This is sent back to Node-RED.
-							</p>
-							<p>
-								<v-btn @click="doEvent(count)" data-mything="This is a thing" title="This is sent back to Node-RED">
-									Click to send msg to Node-RED
-								</v-btn>
-							</p>
-							<p class="text-smaller">
-								Note that including an event button in a form will automatically send all
-								of the form inputs back to Node-RED as well.
-							</p>
-						</div>
-						<v-data-table :items="items"></v-data-table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</body>
+  <!-- Your own CSS -->
+  <link type="text/css" rel="stylesheet" href="./index.css" media="all">
+
+  <script defer src="../../uibuilder/vendor/vue/dist/vue.global.prod.js"></script>
+  <script defer src="../../uibuilder/uibuilder.iife.min.js"></script>
+  <script defer src="../../uibuilder/vendor/vuetify/dist/vuetify.min.js"></script>
+
+  <link type="text/css" rel="stylesheet" href="../../uibuilder/vendor/vuetify/dist/vuetify.min.css" media="all">
+  <link type="text/css" rel="stylesheet" href="../../uibuilder/vendor/@mdi/font/css/materialdesignicons.css"
+    media="all">
+
+  <script defer src="./components/input.js">/* OPTIONAL: Put your custom code in that */</script>
+  <script defer src="./components/color-picker.js">/* OPTIONAL: Put your custom code in that */</script>
+  <script defer src="./components/date-picker.js">/* OPTIONAL: Put your custom code in that */</script>
+  <script defer src="./components/range-slider.js">/* OPTIONAL: Put your custom code in that */</script>
+  <script defer src="./components/button.js">/* OPTIONAL: Put your custom code in that */</script>
+  <script defer src="./index.js">/* OPTIONAL: Put your custom code in that */</script>
+</head>
+
+<body class="uib">
+  <div id="app">
+    <div class="page-title">ASHER Dashboard</div>
+    <div class="page-content">
+      <div class="menu-section">
+        <div class="menu">Home</div>
+        <div class="menu">Unit Overview</div>
+      </div>
+      <div class="content-section">
+        <div class="main-content">
+          <div id="more"><!-- '#more' is used as a parent for dynamic content in examples --></div>
+          <div class="border" v-show="displayBtnByInjection">
+            <v-text-field v-model="text_input" label="Text Input" @change="handleTextInputChange"></v-text-field>
+            <v-color-picker hide-canvas v-model="color" @change="handleColorChange"></v-color-picker>
+            <div style="margin-top: 1rem; position: relative;">
+              <v-menu v-model="menu" :close-on-content-click="false" :nudge-right="40" transition="scale-transition"
+                offset-y attach>
+                <template v-slot:activator="{ on }">
+                  <v-text-field v-model="date" label="Pick a date" readonly v-on="on" @click="toggleMenu"
+                    ref="activator"></v-text-field>
+                </template>
+                <v-date-picker v-model="date" @input="menu = false"></v-date-picker>
+              </v-menu>
+            </div>
+            <v-slider label="Range (0-100):" v-model="selectedRange" :min="0" :max="100"></v-slider>
+            <v-btn @click="submitEvent(text_input, color, selectedRange)"
+              title="Not sent back to Node-RED - this just shows that VueJS is working">
+              Send to Node-Red
+            </v-btn>
+          </div>
+
+          <div class="border">
+            <p>
+              Not sent back to Node-RED - this just shows that VueJS is working
+            </p>
+            <p>
+              <v-btn @click="count++" title="Not sent back to Node-RED - this just shows that VueJS is working">
+                Counter: {{ count }}
+              </v-btn>
+            </p>
+          </div>
+          <div class="border">
+            <p>
+              This is sent back to Node-RED.
+            </p>
+            <p>
+              <v-btn @click="doEvent(count)" data-mything="This is a thing" title="This is sent back to Node-RED">
+                Click to send msg to Node-RED
+              </v-btn>
+            </p>
+            <p class="text-smaller">
+              Note that including an event button in a form will automatically send all
+              of the form inputs back to Node-RED as well.
+            </p>
+          </div>
+          <v-data-table :items="items"></v-data-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
