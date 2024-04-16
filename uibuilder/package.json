@@ -16,31 +16,46 @@
   "uibuilder": {
     "packages": {
       "@mdi/font": {
-        "installFolder": "\\Users\\JaiDev\\.node-red\\projects\\ASHER-APP\\uibuilder\\node_modules\\@mdi\\font",
+        "spec": "^7.4.47",
+        "installFolder": "C:\\Users\\JaiDev\\.node-red\\projects\\ASHER-APP\\uibuilder\\node_modules\\@mdi\\font",
         "installedVersion": "7.4.47",
         "estimatedEntryPoint": "?",
-        "homepage": "https://materialdesignicons.com",
+        "homepage": "https://www.npmjs.com/search?q=@mdi/font",
         "packageUrl": "/@mdi/font",
         "url": "../uibuilder/vendor/@mdi/font/?",
-        "spec": "^7.4.47"
+        "scope": "@mdi/font",
+        "installedFrom": "npm",
+        "outdated": {}
       },
       "vue": {
-        "installFolder": "\\Users\\JaiDev\\.node-red\\projects\\ASHER-APP\\uibuilder\\node_modules\\vue",
+        "spec": "^3.4.21",
+        "installFolder": "C:\\Users\\JaiDev\\.node-red\\projects\\ASHER-APP\\uibuilder\\node_modules\\vue",
         "installedVersion": "3.4.21",
-        "estimatedEntryPoint": "dist/vue.global.js",
-        "homepage": "https://github.com/vuejs/core/tree/main/packages/vue#readme",
+        "estimatedEntryPoint": "?",
+        "homepage": "https://www.npmjs.com/search?q=vue",
         "packageUrl": "/vue",
-        "url": "../uibuilder/vendor/vue/dist/vue.global.js",
-        "spec": "^3.4.21"
+        "url": "../uibuilder/vendor/vue/?",
+        "installedFrom": "npm",
+        "outdated": {
+          "current": "3.4.21",
+          "wanted": "3.4.23",
+          "latest": "3.4.23"
+        }
       },
       "vuetify": {
-        "installFolder": "\\Users\\JaiDev\\.node-red\\projects\\ASHER-APP\\uibuilder\\node_modules\\vuetify",
+        "spec": "^3.5.15",
+        "installFolder": "C:\\Users\\JaiDev\\.node-red\\projects\\ASHER-APP\\uibuilder\\node_modules\\vuetify",
         "installedVersion": "3.5.15",
-        "estimatedEntryPoint": "dist/vuetify.js",
-        "homepage": "https://vuetifyjs.com",
+        "estimatedEntryPoint": "?",
+        "homepage": "https://www.npmjs.com/search?q=vuetify",
         "packageUrl": "/vuetify",
-        "url": "../uibuilder/vendor/vuetify/dist/vuetify.js",
-        "spec": "^3.5.15"
+        "url": "../uibuilder/vendor/vuetify/?",
+        "installedFrom": "npm",
+        "outdated": {
+          "current": "3.5.15",
+          "wanted": "3.5.16",
+          "latest": "3.5.16"
+        }
       }
     }
   }

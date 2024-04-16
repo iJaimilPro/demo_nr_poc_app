@@ -39,6 +39,26 @@
       <div class="content-section">
         <div class="main-content">
           <div id="more"><!-- '#more' is used as a parent for dynamic content in examples --></div>
+          <v-layout class="overflow-visible" style="height: 56px;">
+            <v-bottom-navigation
+              v-model="value"
+              color="primary"
+              active
+            >
+              <v-btn>
+                <v-icon>mdi-history</v-icon>
+                Recents
+              </v-btn>
+              <v-btn>
+                <v-icon>mdi-heart</v-icon>
+                Favorites
+              </v-btn>
+              <v-btn>
+                <v-icon>mdi-map-marker</v-icon>
+                <span>Nearby</span>
+              </v-btn>
+            </v-bottom-navigation>
+          </v-layout>
           <div class="border" v-show="displayBtnByInjection">
             <v-text-field v-model="text_input" label="Text Input" @change="handleTextInputChange"></v-text-field>
             <v-color-picker hide-canvas v-model="color" @change="handleColorChange"></v-color-picker>
